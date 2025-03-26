@@ -8,7 +8,7 @@ const km = document.getElementById('km-utente')
 const age = document.getElementById('age-utente')
 const enter = document.getElementById('enter')
 
-let price = km * 0.21;
+
 
 
 // Corpo del programma
@@ -22,7 +22,21 @@ enter.addEventListener('click', function(){
     let ageUtente = age.value.trim()
     console.log(ageUtente)
 
-    
-    
+    let price = kmUtente * 0.21;
+
+    // sconti
+    if(ageUtente < 18){
+        price = price * 0.8;
+        console.log(`hai diritto al 20% di sconto. Il prezzo del tuo biglietto è ${price} euro`);
+    }
+
+    else if(ageUtente > 65){
+        price = price * 0.6;
+        console.log(`hai diritto al 40% di sconto. Il prezzo del tuo biglietto è ${price} euro`);
+    }
+
+    else{
+        console.log(`Il prezzo del tuo biglietto è ${price} euro`);
+    }
 
 })
