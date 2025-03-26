@@ -23,16 +23,19 @@ enter.addEventListener('click', function(){
     console.log(ageUtente)
 
     let price = kmUtente * 0.21;
+    
 
     // sconti
     if(ageUtente < 18){
         price = price * 0.8;
-        console.log(`hai diritto al 20% di sconto. Il prezzo del tuo biglietto è ${price} euro`);
+        
+        console.log(`hai diritto al 20% di sconto. Il prezzo del tuo biglietto è ${price.toFixed(2)} euro`);
     }
 
     else if(ageUtente > 65){
         price = price * 0.6;
-        console.log(`hai diritto al 40% di sconto. Il prezzo del tuo biglietto è ${price} euro`);
+        
+        console.log(`hai diritto al 40% di sconto. Il prezzo del tuo biglietto è ${price.toFixed(2)} euro`);
     }
 
     else{
