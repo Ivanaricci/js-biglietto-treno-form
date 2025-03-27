@@ -22,9 +22,17 @@ button.addEventListener('click', function(event){
 
     let kmUtente = parseFloat(km.value.trim())
     console.log(kmUtente)
+    km.value=''
 
     let ageUtente = parseInt(age.value.trim())
     console.log(ageUtente)
+    age.value=''
+
+    if (isNaN(kmUtente) || isNaN(ageUtente) || kmUtente <= 0 || ageUtente <= 0) {
+        offerta.textContent = "Dati non validi";
+        costoBiglietto.textContent = "-";
+        return;
+    }
 
     let price = kmUtente * 0.21;
     let tipoOfferta = 'Biglietto standard'
